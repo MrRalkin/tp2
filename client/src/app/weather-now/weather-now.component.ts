@@ -8,7 +8,7 @@ import { WeatherService } from '../weather.service';
 })
 export class WeatherNowComponent implements OnInit, OnDestroy {
 
-  constructor(private _weattherService: WeatherService) { }
+  constructor(private _weatherService: WeatherService) { }
 
   ngOnInit(): void {
     //TODO s'abonner au weatherSubject dans le weather.service pour obtenir les dernières informations de météo

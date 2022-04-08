@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { WeatherService } from "../weather.service"
 
 @Component({
   selector: 'app-weather-hourly',
@@ -7,7 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class WeatherHourlyComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private _weatherService: WeatherService) { }
 
   ngOnInit(): void {
     //TODO s'abonner au weatherSubject dans le weather.service pour obtenir les dernières informations de météo
