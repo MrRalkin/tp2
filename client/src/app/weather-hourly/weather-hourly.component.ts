@@ -8,14 +8,22 @@ import { WeatherService } from "../weather.service"
 })
 export class WeatherHourlyComponent implements OnInit, OnDestroy {
 
-  constructor(private _weatherService: WeatherService) { }
+  public wttrInfo: any;
+
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     //TODO s'abonner au weatherSubject dans le weather.service pour obtenir les dernières informations de météo
+    this.weatherService.weatherSubject.subscribe({
+      error:(err) => console.log(err),
+      next:(value) => this.wttrInfo = value,
+      complete: () => console.log('complété.')
+    });
   }
   
   ngOnDestroy(): void {
     //TODO se désabonner du weatherSubject
+    this.weatherService.weatherSubject.unsubscribe();
   }
 
 }
