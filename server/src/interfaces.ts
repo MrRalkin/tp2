@@ -9,8 +9,8 @@ export interface User{
     //Mot de passe chiffré de l'utilisateur
     hash: string
     //Username de l'utilisateur
-    username: string,
-}
+    username: string
+  }
 
 
 //Permet d'ajouter des champs à la requête de express
