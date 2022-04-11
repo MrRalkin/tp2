@@ -25,9 +25,11 @@ body {
    font-family: roboto;
    color: white;
    font-weight: bold;
-   text-align:middle;
-   padding: 10px 20px 10px 550px;
+   text-align:center;
+   padding-top: 20px;
+   padding-bottom: 20px;
    background-color:#c5d9fa;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .header-now {
@@ -88,4 +90,8 @@ input[type=text], select, textarea {
    resize: vertical;
    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 5px 2px inset;
 }
+
+a:hover {
+   color: #ca7268;
+ }
  

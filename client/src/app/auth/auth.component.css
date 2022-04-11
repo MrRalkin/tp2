@@ -28,27 +28,15 @@ button {
    text-align: center;
    cursor: pointer;
    height:45px;
-   margin-left:2px;
  } 
  
- input, select, textarea {
-    width: 60%;
-    padding: 8px;
-    margin-left: 0px;
-    margin-bottom: 1px;
-    border: none;
-    border-radius: 6px;
-    resize: vertical;
-    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 5px 2px inset;
+ input[type=text], [type=password] {
+   border: 2px solid rgb(189, 190, 245);
+   border-radius: 4px;
+   box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 5px 2px inset;
  }
-
- form {
-   margin-left: 225px;
- }
+ 
  .text-align{
-    text-align: center;
-    font-family: roboto;
-    font-weight: bold;
     color: #0d47a1
  }
 
@@ -58,4 +46,11 @@ button {
 
  .espace-bas{
     margin-bottom: 130px;
+ }
+
+ p{
+   text-align: center;
+   font-family: roboto;
+   font-weight: bold;
+   color: red
  }
