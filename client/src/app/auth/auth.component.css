@@ -1,0 +1,59 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+ }
+ 
+ .conteneur{
+
+    display: flex;
+ }
+ 
+ .header {
+    padding: 1px 0px 15px 0px;
+    text-align: center;
+    background-color: lightgray;
+ }
+ 
+ .footer {
+    padding: 1px 0px 15px 5px;
+    background-color: lightgray;
+ }
+ 
+ .text-img {
+    vertical-align: middle;
+ }
+ 
+ .header-link {
+    padding: 1px 0px 0px 20px;
+ }
+ 
+ .header-auth {
+    border: groove;
+    width: 300px;
+    padding: 0px 10px;
+ }
+
+ .header-now {
+    border: groove;
+    width: 400px;
+    padding: 0px 10px;
+ }
+ 
+ .now-hourly-details {
+    padding: 0px 5px;
+ }
+ 
+ .header-hourly {
+    border: groove;
+    width: 820px;
+    padding: 0px 5px 5px;
+ }
+ 
+ .body-hourly-details {
+    border: groove;
+    width: 33%;
+    padding: 0px 10px;
+ }
+ 
+ .time-align {
+    text-align: right;
+ }

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { WeatherService } from "../weather.service"
 
 @Component({
@@ -9,12 +10,13 @@ import { WeatherService } from "../weather.service"
 export class WeatherHourlyComponent implements OnInit, OnDestroy {
 
   public wttrInfo: any;
-
+  private subscribed:Subscription = {} as Subscription;
+  
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     //TODO s'abonner au weatherSubject dans le weather.service pour obtenir les dernières informations de météo
-    this.weatherService.weatherSubject.subscribe({
+    this.subscribed = this.weatherService.weatherSubject.subscribe({
       error:(err) => console.log(err),
       next:(value) => this.wttrInfo = value,
       complete: () => console.log('complété.')
@@ -23,7 +25,20 @@ export class WeatherHourlyComponent implements OnInit, OnDestroy {
   
   ngOnDestroy(): void {
     //TODO se désabonner du weatherSubject
-    this.weatherService.weatherSubject.unsubscribe();
+    this.subscribed.unsubscribe();
   }
 
+  convert(s:string) {
+
+    var t = '';
+
+    for (var i = 0; i < (4 - s.length); i++)
+    {
+        t += '0'
+    }
+    
+    t += s;
+
+    return t.substring(0,2) + 'h' + t.substring(2,4);
+  }
 }

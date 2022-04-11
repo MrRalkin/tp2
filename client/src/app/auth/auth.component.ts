@@ -15,23 +15,27 @@ import { AuthService } from './auth.service';
 })
 export class AuthComponent implements OnInit {
 
+  public errorMessage:string = '';
   constructor(private _authService: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
+    this.errorMessage = '';
   }
   
   //Bouton login
   login(form: NgForm){
     this._authService.login(<Authentification>form.value).subscribe({
-      error:err => alert('Erreur lors de la connexion')
+      error:err => this.errorMessage = err.error.errMessage
     })
+    this.errorMessage = '';
   }
   
   //Bouton signup
   signup(form: NgForm){
     this._authService.signup(<Authentification>form.value).subscribe({
-      error: err => alert("Erreur lors de l'inscription") 
+      error:err => this.errorMessage = err.error.errMessage
     })
+    this.errorMessage = '';
   }
 
 }

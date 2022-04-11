@@ -21,7 +21,7 @@ export class MongodbService {
     
     //Retourne les informations d'un utilisateur à partir de son username
     async getUserByUsername(username: string):Promise<WithId<User> | null>{
-        console.log('==> username=' + username);
+
         //TODO Trouver l'utilisateur en fonction de son nom d'utilisateur
         const userdb = await this._collection.findOne({username: username});
         
@@ -31,18 +31,19 @@ export class MongodbService {
     
     //Fait la création d'un utilisateur dans la base de données
     async createUser(user: User): Promise<WithId<User> | null>{
-        console.log('==> user=' + user.username);
-        console.log('==> hash=' + user.hash);
 
         //TODO Créer un utilisateur en fonction des information d'authentification
         //Utilisez l'interface User
-        const aUser:User = {hash:user.hash, username:user.username};
+        const aUser:WithId<User> = {} as WithId<User>;
 
-        await this._collection.insertOne(aUser);
+        aUser.hash = user.hash;
+        aUser.username = user.username;
 
-        const userdb = await this.getUserByUsername(user.username);
+        const wasInserted = await this._collection.insertOne(aUser);
+
+        aUser._id = wasInserted.insertedId;
 
         //TODO Retourner le user créé avec son _id
-        return userdb;
+        return aUser;
     }
 }

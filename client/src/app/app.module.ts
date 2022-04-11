@@ -9,6 +9,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { WeatherNowComponent } from './weather-now/weather-now.component';
 import { WeatherHourlyComponent } from './weather-hourly/weather-hourly.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { WeatherHourlyComponent } from './weather-hourly/weather-hourly.componen
     AuthComponent,
     WeatherNowComponent,
     WeatherHourlyComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

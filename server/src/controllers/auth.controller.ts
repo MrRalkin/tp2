@@ -22,13 +22,12 @@ export class AuthController{
         // -> /api/v1/auth/login
         router.post('/login',async (req:Request, res: Response) => {
             const auth: Authentification = req.body;
-            console.log('Username=' + auth.username + '/' + auth.password);
 
             //TODO Trouver l'utilisateur dans la BD, si l'utilisateur est null retournez le code 403
             const user = await this._mongodbService.getUserByUsername(auth.username);
             if (user === null)
             {
-                res.status(403).json({errMessage:'user or password invalid'});
+                res.status(403).json({errMessage:'Usager ou mot de passe invalide!'});
             }
             else
             {
@@ -39,17 +38,16 @@ export class AuthController{
                 if (isValid)
                 {
                     //TODO Générer le jeton de l'utilisateur à l'aide du service auth.service
-                    const token = await this._authService.generateToken(auth.username);
+                    const token = await this._authService.generateToken(user._id.toString());
 
                     //TODO Retourner les informations de connexion de l'utilisateur (voir interface UserConnection) sous format json 
                     const userConnection:UserConnection = {id:user._id, token:token, username:user.username};
 
-                    const aUser = JSON.stringify(userConnection);
-                    res.status(200).json(aUser);
+                    res.status(200).json(userConnection);
                 }
                 else
                 {
-                    res.status(403).json({errMessage:'user or password invalid'});
+                    res.status(403).json({errMessage:'Usager ou mot de passe invalide!'});
                 }
             }
         });
@@ -57,43 +55,39 @@ export class AuthController{
         // -> /api/v1/auth/signup
         router.post('/signup',async (req:Request, res: Response) => {
             const auth: Authentification = req.body;
-            console.log('Username=' + auth.username + '/' + auth.password);
 
             //TODO Valider que l'utilisateur (username) n'est pas déjà dans la BD
             //Retounez un code 405 si déjà présent
             const user = await this._mongodbService.getUserByUsername(auth.username);
             if (user != null)
             {
-                res.status(405).json({errMessage:'user already exist'});
+                res.status(405).json({errMessage:'Usager déjà existant!'});
             }
             else
             {
-                let hash = '';
+                const aUserSignUp:User = {username:auth.username, hash:''};
                 //TODO Chiffrer le mot de passe avec auth.service
-                await this._authService.encryptPassword(auth.password).then((h) => hash = h);
+                await this._authService.encryptPassword(auth.password).then((h) => aUserSignUp.hash = h);
                 //TODO Ajouter l'utilisateur à la BD
                 //Retounez un code 500 en cas de problème
-                const aUserSignUp:User = {username:auth.username, hash:hash};
                 const user = await this._mongodbService.createUser(aUserSignUp);
                 if (user != null)
                 {
                     //TODO Générer le jeton de l'utilisateur à l'aide du service auth.service
-                    const token = await this._authService.generateToken(auth.username);
+                    const token = await this._authService.generateToken(user._id.toString());
                 
                     //TODO Retourner les informations de connexion de l'utilisateur (voir interface UserConnection) sous format json 
                     const userConnection:UserConnection = {id:user._id, token:token, username:user.username};
-                    const aUser = JSON.stringify(userConnection);
-
-                    res.status(200).json(aUser);
+                   
+                    res.status(200).json(userConnection);
                 }
                 else
                 {
-                    res.status(500).json({errMessage:'Unable to save the user'});
+                    res.status(500).json({errMessage:'Impossible de sauvegarder l\'usager'});
                 }
             }
         });
          
         return router;
     }
-
 }

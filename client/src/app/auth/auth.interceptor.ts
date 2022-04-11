@@ -25,6 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     return this._authService.userConnectionSubject.pipe(take(1), exhaustMap(userConnection => {
+
       if(userConnection === null){
         //L'utilisateur n'est pas connecté
         return next.handle(request);
@@ -36,6 +37,7 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${userConnection.token}`
         }
       });
+
       return next.handle(authRequest);
     }))
   }

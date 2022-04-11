@@ -1,0 +1,24 @@
+<div>
+    <div class="header">
+      <p><img src="assets/logo.png" alt="Météo Wiki" width="42" height="42" class="text-img">&nbsp;&nbsp;&nbsp;Météo Wiki</p>
+      <form>
+        <input [(ngModel)]="searchText" id="search" name="search" placeholder="Recherche ..." size="100">
+        <button type="button" (click)="update()">Chercher</button>
+      </form>
+    </div>
+    <div class="header-link">
+      <br>
+      <span>
+        <a routerLink="/weather/now" rel="noopener noreferrer">Condidition actuelle</a>
+      </span>&nbsp;
+      <span>
+        <a routerLink="/weather/hourly" rel="noopener noreferrer">Prochaines heures</a>
+      </span>&nbsp;
+      <span>
+        <a routerLink="/auth" rel="noopener noreferrer">Connexion</a>
+      </span>&nbsp;
+      <br><br>
+    </div>
+    <hr>
+</div>
+

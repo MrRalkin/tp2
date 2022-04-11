@@ -1,3 +1,6 @@
+
+<div class="conteneur">
+    <div class="header-auth">
 <p>Vous devez vous connecter!</p>
 <form #authForm="ngForm">
     <div>
@@ -9,4 +12,7 @@
     </div>
     <br>
     <button (click)="login(authForm)" [disabled]="!authForm.valid">Se connecter</button> | <button [disabled]="!authForm.valid" (click)="signup(authForm)">S'inscrire </button>
+    <p>{{errorMessage}}</p>
 </form>
+  </div>
+</div>
