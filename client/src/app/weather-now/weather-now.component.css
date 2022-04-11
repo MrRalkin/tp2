@@ -1,49 +1,72 @@
 body {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
- }
- 
- .conteneur{
-    display: flex;
- }
- 
- .header {
-    padding: 1px 0px 15px 0px;
-    text-align: center;
-    background-color: lightgray;
- }
- 
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 
- .text-img {
-    vertical-align: middle;
- }
- 
- .header-link {
-    padding: 1px 0px 0px 20px;
- }
- 
- .header-now {
-    border: groove;
-    width: 400px;
-    padding: 0px 10px;
- }
- 
- .now-hourly-details {
-    padding: 0px 5px;
- }
- 
- .header-hourly {
-    border: groove;
-    width: 820px;
-    padding: 0px 5px 5px;
- }
- 
- .body-hourly-details {
-    border: groove;
-    width: 33%;
-    padding: 0px 10px;
- }
- 
- .time-align {
-    text-align: right;
- }
-  
+.conteneur{
+   display: flex;
+   margin-left: 18px;
+   margin-right: 18px;
+}
+
+.header {
+   padding: 1px 0px 15px 0px;
+   text-align: center;
+   background-color: lightgray;
+}
+
+.footer {
+   padding: 1px 0px 15px 5px;
+   background-color: lightgray;
+}
+
+.text-img {
+   vertical-align: middle;
+}
+
+.header-link {
+  text-align:middle;
+  padding: 5px 20px 20px 20px;
+  background-color:#9bc0fc;
+}
+
+.header-now {
+   border: groove;
+   width: 351px;
+   padding: 10px 10px;
+   margin-top:20px;
+   margin-bottom:30px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 5px;
+   box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+   border-color:#9bc0fc;
+}
+
+.now-hourly-details {
+   padding: 0px 5px;
+}
+
+.header-hourly {
+   border: groove;
+   width: 820px;
+   padding: 0px 5px 5px;
+}
+
+.body-hourly-details {
+   border: groove;
+   width: 33%;
+   padding: 0px 10px;
+}
+
+.time-align {
+   text-align: right;
+}
+
+hr{
+   padding: none;
+   color:#4285F4
+}
+
+h5{ 
+   color:#0d47a1;
+}

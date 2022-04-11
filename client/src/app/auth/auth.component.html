@@ -1,7 +1,7 @@
 
-<div class="conteneur">
+<div class=" header-hourly espace-bas">
     <div class="header-auth">
-<p>Vous devez vous connecter!</p>
+<p class="text-align">Vous devez vous connecter!</p>
 <form #authForm="ngForm">
     <div>
         <input name="username" type="text" placeholder="Nom utilisateur" required ngModel>
@@ -11,7 +11,7 @@
         <input name="password" type="password" placeholder="Mot de passe" required ngModel>
     </div>
     <br>
-    <button (click)="login(authForm)" [disabled]="!authForm.valid">Se connecter</button> | <button [disabled]="!authForm.valid" (click)="signup(authForm)">S'inscrire </button>
+    <button class="btn btn-primary leftmargin" (click)="login(authForm)" [disabled]="!authForm.valid">Se connecter</button> | <button class="btn btn-primary" [disabled]="!authForm.valid" (click)="signup(authForm)">S'inscrire </button>
     <p>{{errorMessage}}</p>
 </form>
   </div>

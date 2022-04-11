@@ -1,53 +1,91 @@
 body {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
- }
- 
- .conteneur{
-    display: flex;
- }
- 
- .header {
-    padding: 1px 0px 15px 0px;
-    text-align: center;
-    background-color: lightgray;
- }
- 
- .footer {
-    padding: 1px 0px 15px 5px;
-    background-color: lightgray;
- }
- 
- .text-img {
-    vertical-align: middle;
- }
- 
- .header-link {
-    padding: 1px 0px 0px 20px;
- }
- 
- .header-now {
-    border: groove;
-    width: 400px;
-    padding: 0px 10px;
- }
- 
- .now-hourly-details {
-    padding: 0px 5px;
- }
- 
- .header-hourly {
-    border: groove;
-    width: 820px;
-    padding: 0px 5px 5px;
- }
- 
- .body-hourly-details {
-    border: groove;
-    width: 33%;
-    padding: 0px 10px;
- }
- 
- .time-align {
-    text-align: right;
- }
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.conteneur{
+   display: flex;
+}
+
+.header {
+   padding: 5px 0px 15px 0px;
+   text-align: center;
+   background-color: #4285F4;
+}
+
+.footer {
+   padding: 1px 0px 15px 5px;
+   background-color: lightgray;
+}
+
+.text-img {
+   vertical-align: middle;
+}
+
+.header-link {
+   font-family: roboto;
+   color: white;
+   font-weight: bold;
+   text-align:middle;
+   padding: 10px 20px 10px 550px;
+   background-color:#c5d9fa;
+}
+
+.header-now {
+   border: groove;
+   width: 400px;
+   padding: none;
+}
+
+.now-hourly-details {
+   padding:none;
+}
+
+.header-hourly {
+   border: groove;
+   width: 820px;
+   padding: none;
+}
+
+.body-hourly-details {
+   border: groove;
+   width: 33%;
+   padding: none;
+}
+
+.time-align {
+   text-align: right;
+}
+
+button {
+  background-color: #0d47a1;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  height:45px;
+  margin-left:2px;
+
+
+}
+
+button:hover {
+  box-shadow: 15px 15px 15px 2px rgba(78, 72, 77, 0.219);
+  background-color: #ca7268;
+  border: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  height:45px;
+  margin-left:2px;
+} 
+
+input[type=text], select, textarea {
+   width: 60%;
+   padding: 8px;
+   margin-left: 0px;
+   margin-bottom: 1px;
+   border: none;
+   border-radius: 6px;
+   resize: vertical;
+   box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 5px 2px inset;
+}
  

@@ -1,8 +1,8 @@
 <div class="conteneur">
     <div class="header-now" *ngFor="let info of wttrInfo">
-      <h2 *ngFor="let area of info.nearest_area">{{area.areaName[0].value}}, {{area.region[0].value}}, {{area.country[0].value}}</h2>
+      <h5 *ngFor="let area of info.nearest_area">{{area.areaName[0].value}}, {{area.region[0].value}}, {{area.country[0].value}}</h5>
       <div class="now-hourly-details" *ngFor="let current of info.current_condition">
-          <p><strong>Température : </strong>{{current.temp_C}} C (ressentie {{current.FeelsLikeC}})</p><hr>
+          <p><strong>Température : </strong>{{current.temp_C}} °C (ressentie {{current.FeelsLikeC}} °C)</p><hr>
           <p><strong>Conditions : </strong>{{current.weatherDesc[0].value}}</p><hr>
           <p><strong>Vents : </strong>{{current.windspeedKmph}} Km/h - {{current.winddir16Point}}</p><hr>
           <p><strong>Visibilité : </strong>{{current.visibility}} Km</p><hr>

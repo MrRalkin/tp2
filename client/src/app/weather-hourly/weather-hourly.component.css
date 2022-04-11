@@ -3,9 +3,8 @@ body {
  }
  
  .conteneur{
-    display: flex;
+   display: flex;
  }
- 
 
  .text-img {
     vertical-align: middle;
@@ -22,22 +21,47 @@ body {
  }
  
  .now-hourly-details {
-    padding: 0px 5px;
+    padding: 10px 10px;
+    margin-top:20px;
+    border-radius: 5px;
+    border-color:#9bc0fc;
  }
  
  .header-hourly {
     border: groove;
     width: 820px;
-    padding: 0px 5px 5px;
+    padding: 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    border-radius: 5px;
+    border-color:#9bc0fc;
+    margin-bottom: 30px;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
  }
  
  .body-hourly-details {
     border: groove;
     width: 33%;
-    padding: 0px 10px;
+    padding: 0px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    border-radius: 5px;
+    border-color:#9bc0fc;
  }
  
  .time-align {
     text-align: right;
+ }
+
+ h4{
+    color:#0d47a1;
+    text-align: center;
+ }
+
+ h5{ 
+    color:#0d47a1;
+    text-align: center;
  }
   

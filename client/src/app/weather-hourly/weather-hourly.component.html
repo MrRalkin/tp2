@@ -1,11 +1,11 @@
 <div class="header-hourly" *ngFor="let info of wttrInfo">
-  <h2 *ngFor="let area of info.nearest_area">{{area.areaName[0].value}}, {{area.region[0].value}}, {{area.country[0].value}}</h2>
+  <h4 *ngFor="let area of info.nearest_area">{{area.areaName[0].value}}, {{area.region[0].value}}, {{area.country[0].value}}</h4>
   <div class="now-hourly-details" *ngFor="let current of info.current_condition">
-      <p >{{current.localObsDateTime}} : {{current.temp_C}} C ({{current.FeelsLikeC}}) : {{current.weatherDesc[0].value}}</p>
+      <h5>{{current.localObsDateTime}} : {{current.temp_C}} °C ({{current.FeelsLikeC}} °C) : {{current.weatherDesc[0].value}}</h5>
   </div>
   <div class="conteneur">
         <div class="body-hourly-details" *ngFor="let w of info.weather">
-            <p><strong>{{w.date}}</strong> : {{w.avgtempC}} C</p>
+            <p><strong>{{w.date}}</strong> : {{w.avgtempC}} °C</p>
             <table>
                 <tr>
                     <td>
@@ -20,7 +20,7 @@
                         <strong>{{convert(h.time)}}:</strong>
                     </td>
                     <td>
-                       {{h.FeelsLikeC}} C, {{h.weatherDesc[0].value}}
+                       {{h.FeelsLikeC}} °C, {{h.weatherDesc[0].value}}
                     </td>
                 </tr>
             </table>
