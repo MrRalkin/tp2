@@ -17,7 +17,7 @@
                 </tr>
                 <tr *ngFor="let h of w.hourly">
                     <td class="time-align">
-                        <strong>{{convert(h.time)}}:</strong>
+                        <strong>{{h.time | convertirHeure}}:</strong>
                     </td>
                     <td>
                        {{h.FeelsLikeC}} °C, {{h.weatherDesc[0].value}}

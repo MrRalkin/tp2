@@ -11,6 +11,7 @@ import { WeatherNowComponent } from './weather-now/weather-now.component';
 import { WeatherHourlyComponent } from './weather-hourly/weather-hourly.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ConvertirHeurePipe } from './convertir-heure.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     WeatherHourlyComponent,
     HeaderComponent,
     FooterComponent,
+    ConvertirHeurePipe,
   ],
   imports: [
     BrowserModule,
